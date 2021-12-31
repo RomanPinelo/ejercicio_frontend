@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Formulario de Contacto</title>
+  </head>
+
+  <body>
+    <section class="formContainer">
+      <img src="./images/nit.png" alt="Pet" class="formContainer__image">
+      
+      <img src="./images/nit_responsive.png" alt="Pet1" class="formContainer__image1">
+      
+      <form class="formContainer__form" id="contactForm" action="" method="post" onsubmit="return validar();">
+
+        <h2 class="formContainer__form-title">Formulario de Contacto</h2>
+
+        <div class="formContainer__form-wrapperInputs">
+          <div class="formContainer__form-input">
+            <img src="./svg/nombre-01.svg" alt="User"><input type="text" name="name" id="name" placeholder="Nombre *"><span class="formContainer__form-label">Nombre</span>
+          </div>
+  
+          <div class="formContainer__form-input">
+            <img src="./svg/email-01.svg" alt="E-mail"><input type="email" name="mail" id="mail" placeholder="E-mail *"><span class="formContainer__form-label">E-mail</span>
+          </div>
+  
+          <div class="formContainer__form-input">
+            <img src="./svg/phone-01.svg" alt="Phone"><input type="text" name="phone" id="phone" placeholder="Teléfono *"><span class="formContainer__form-label">Teléfono</span>
+          </div>
+  
+          <div class="formContainer__form-input">
+            <img src="./svg/direccion-01.svg" alt="Address"><input type="text" name="address" placeholder="Dirección" id="address"><span class="formContainer__form-label">Dirección</span>
+          </div>
+  
+          <div class="formContainer__form-input">
+            <img src="./svg/asunto-01.svg" alt="Subject"><input type="text" name="subject" placeholder="Asunto" id="subject"><span class="formContainer__form-label">Asunto</span>
+          </div>
+
+          <div class="formContainer__form-input falseInput">
+            <p>
+              * Campos obligatorios
+            </p>
+          </div>
+          
+        </div>
+
+        <div class="formContainer__form-comments">
+          <div class="divComments">
+            <p>
+              <img src="./svg/comentarios-01.svg" alt="Comments">Comentarios
+            </p>
+            <p class="falseInput1">
+              * Campos obligatorios
+            </p>
+          </div>
+          <textarea name="comments" id="comments" cols="30" rows="5"></textarea>
+        </div>
+
+        <div class="formContainer__wrapperCatcha">
+          <div class="formContainer__form-capcha">
+            <p>
+              CAPCHA
+            </p>
+            <P class="capchaMessage">
+              Selecciona la figura que corresponde a un <span class="figure_name" id="figureName"></span>
+            </P>
+          </div>
+  
+          <div class="formContainer__form-capchaFigures">
+            <div class="rectangle" id="Rectangle"></div>
+            <div class="square" id="Square"></div>
+            <div class="circle" id="Circle"></div>
+          </div>
+        </div>
+  
+        <input type="submit" value="Enviar" class="button">
+      </form>
+
+    </section>
+    
+    <script src="./script.js"></script>
+
+    <!-- Tuve que agregar https: -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+
+</html>

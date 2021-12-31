@@ -1,0 +1,355 @@
+/***********************************************************
+  Defining fonts for text 
+***********************************************************/
+@font-face {
+  font-family: MyriadPro-Black;
+  src: url(../fonts/MyriadPro-Black.otf) format("opentype");
+}
+
+@font-face {
+  font-family: MyriadPro-Bold;
+  src: url(../fonts/MyriadPro-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: MyriadPro-Light;
+  src: url(../fonts/MyriadPro-Light.otf) format("opentype");
+}
+
+/***********************************************************
+  Color variables 
+***********************************************************/
+:root {
+  --text: #c2c7ca;
+  --formBackground: #4b4b4d;
+  --formBorder: #414143;
+  --inputBorder: #272729;
+  --button: #549484;
+  --placeholderColor: #777777;
+  --colorFigure: #bdbec0;
+}
+
+/***********************************************************
+  General styles 
+***********************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: var(--text);
+  font-family: MyriadPro-Light;
+}
+
+.formContainer__image {
+  display: none;
+}
+
+/***********************************************************
+  Mobile screen
+***********************************************************/
+/***********************************************************
+  Form container style 
+***********************************************************/
+.formContainer {
+  width: 90vw;
+  height: 90vh;
+  overflow: scroll;
+  margin: auto;
+  position: relative;
+  top: 2rem;
+}
+
+/***********************************************************
+  Image styles in responsive view 
+***********************************************************/
+.formContainer__image1 {
+  display: block;
+  width: 80%;
+  height: 22%;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  z-index: 2;
+  object-fit: cover;
+}
+
+
+/***********************************************************
+  Form styles 
+***********************************************************/
+.formContainer__form {
+  background: var(--formBackground);
+  width: 100%;
+  position: absolute;
+  top: 19.25%;
+  border-radius: 10px;
+  border: var(--formBorder) 10px solid ;
+}
+
+/* Title */
+.formContainer .formContainer__form .formContainer__form-title {
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+}
+
+/* Inputs */
+.formContainer .formContainer__form .formContainer__form-label {
+  display: block;
+  width: 5rem;
+  margin-left: 15%;
+  color: var(--placeholderColor);
+  position: absolute;
+  top: -1rem;
+  opacity: 0;
+}
+
+.formContainer .formContainer__form .formContainer__form-input {
+  border: 2px solid var(--inputBorder);
+  width: 95%;
+  height: 2.25rem;
+  margin: 0.5rem auto 1.6rem;
+  display: flex;
+  position: relative;
+}
+
+.formContainer .formContainer__form .formContainer__form-input .falseInput {
+  display: none;
+}
+
+.formContainer .formContainer__form .formContainer__form-input img {
+  width: 10%;
+}
+
+.formContainer .formContainer__form .formContainer__form-input input {
+  background-color: var(--formBackground);
+  outline: none;
+  border: 0;
+  width: 90%;
+  padding-left: 1rem;
+  color: var(--text);
+  letter-spacing: 2px;
+}
+
+.formContainer .formContainer__form .falseInput {
+  display: none;
+}
+
+.formContainer .formContainer__form .formContainer__form-input input::placeholder {
+  font-family: MyriadPro-Black;
+  color: var(--placeholderColor);
+}
+
+.formContainer .formContainer__form .formContainer__form-input:focus-within{
+  border: 0;
+  border-bottom: 2px solid var(--inputBorder);
+}
+
+.formContainer .formContainer__form .formContainer__form-input input:focus + .formContainer__form-label {
+  opacity: 1;
+}
+
+/* Textarea styles */
+.formContainer .formContainer__form .formContainer__form-comments .divComments {
+  display: flex;
+  justify-content: space-around;
+}
+
+.formContainer .formContainer__form .formContainer__form-comments .divComments img {
+  width: 10%;
+}
+
+.formContainer .formContainer__form .formContainer__form-comments .divComments p {
+  width: 47%;
+  color: var(--placeholderColor);
+}
+
+.formContainer .formContainer__form .formContainer__form-comments textarea {
+  display: block;
+  background-color: var(--formBackground);
+  width: 95%;
+  outline: none;
+  resize: none;
+  border: 2px solid var(--inputBorder);
+  margin: 1rem auto;
+  color: var(--text);
+  padding: 0.5rem;
+  text-align: justify;
+}
+
+.formContainer .formContainer__form .formContainer__form-comments textarea:focus {
+  border: 0;
+  border-bottom: 2px solid var(--inputBorder);
+}
+
+
+/* Capcha*/
+.formContainer .formContainer__form .formContainer__form-capcha {
+  width: 95%;
+  height: 4rem;
+  margin: auto;
+  color: var(--text);
+  font-family: MyriadPro-Bold;
+}
+
+.formContainer .formContainer__form .formContainer__form-capcha p {
+  margin: 1rem 0;
+}
+
+.formContainer .formContainer__form .formContainer__form-capcha .capchaMessage {
+  font-size: 0.8rem;
+}
+
+.formContainer .formContainer__form .formContainer__form-capcha .capchaMessage .figure_name {
+  color: #fff;
+}
+
+/* Capcha figures */
+.formContainer .formContainer__form .formContainer__form-capchaFigures {
+  width: 100%;
+  height: 4rem;
+  margin: 1rem 0 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formContainer .formContainer__form .formContainer__form-capchaFigures .rectangle {
+  background-color: var(--colorFigure);
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.formContainer .formContainer__form .formContainer__form-capchaFigures .square {
+  background-color: var(--colorFigure);
+  width: 4rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+.formContainer .formContainer__form .formContainer__form-capchaFigures .circle {
+  background-color: var(--colorFigure);
+  width: 4rem;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/***********************************************************
+  Button styles
+***********************************************************/
+.formContainer .formContainer__form .button {
+  background-color: var(--button);
+  color: var(--text);
+  width: 80%;
+  height: 3rem;
+  border-radius: 3px;
+  border: 0;
+  outline: none;
+  position: absolute;
+  bottom: -1.5rem;
+  left: 10%;
+  cursor: pointer;
+}
+
+
+
+/************************************************************* 
+  DESKTOP SCREEN
+*************************************************************/
+@media screen and (min-width: 1000px) {
+  .formContainer__image {
+    display: block;
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    object-fit: cover;
+  }
+
+  .formContainer__image1 {
+    display: none;
+  }
+
+  .formContainer {
+    overflow: hidden;
+  }
+
+  .formContainer__form {
+    width: 83.5%;
+    height: calc(100% - 1.5rem);
+    left: 16.5%;
+    top: 0;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-input {
+    width: 45%;
+    margin-bottom: 1rem;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-wrapperInputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-wrapperInputs .falseInput {
+    display: block;
+    width: 45%;
+    border: 0;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-comments .falseInput1 {
+    display: none;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-comments .divComments {
+    display: block;
+    width: 40%;
+    margin: 0 0 0 2.5%;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-comments textarea {
+    margin: 0 0 0 2.5%;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-capcha {
+    height: 4rem;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-capcha .capchaMessage {
+    font-size: 1rem;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-capcha p {
+    margin: 0;
+  }
+
+  .formContainer .formContainer__form .formContainer__wrapperCatcha {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+
+  .formContainer .formContainer__form .formContainer__form-capchaFigures {
+    width: 45%;
+    height: 4rem;
+    margin: 0;
+    justify-content: space-around;
+  }
+}

@@ -1,0 +1,115 @@
+// const formulario = document.getElementById('contactForm');
+// const inputs = document.querySelectorAll('#contactForm input'); //Crea un arreglo de todos los inputs de contactForm
+
+// const expresiones = {
+// 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+// 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+// 	telefono: /^\d{10,10}$/ // 10 numeros.
+// }
+
+// const validarFormulario = (e) => {
+// 	switch (e.target.name) {
+// 		case "name":
+// 			validarCampoName(expresiones.nombre, e.target);
+// 		break;
+// 		case "mail":
+// 			validarCampoMail(expresiones.correo, e.target);
+// 		break;
+// 		case "phone":
+// 			validarCampoPhone(expresiones.telefono, e.target);
+// 		break;
+// 	}
+// };
+
+// const validarCampoName = (expresion, input) => {
+// 	if(expresion.test(input.value)){
+// 		console.log('Correcto');
+// 	} else {
+// 		Swal.fire({
+//             icon: 'error',
+//             title: 'Te has equivocado.',
+//             text: '¡Tu nombre no puede llevar simbolos!'
+//         });
+// 	}
+// };
+
+// const validarCampoMail = (expresion, input) => {
+// 	if(expresion.test(input.value)){
+// 		console.log('Correcto');
+// 	} else {
+// 		Swal.fire({
+//             icon: 'error',
+//             title: 'Te has equivocado.',
+//             text: '¡Verifica el formato de tu correo!'
+//         });
+// 	}
+// };
+
+// const validarCampoPhone = (expresion, input) => {
+// 	if(expresion.test(input.value)){
+// 		console.log('Correcto');
+// 	} else {
+// 		Swal.fire({
+//             icon: 'error',
+//             title: 'Te has equivocado.',
+//             text: '¡Tu número debe ser de 10 digitos!'
+//         });
+// 	}
+// };
+
+// inputs.forEach((input) => {
+//     input.addEventListener('focusout', validarFormulario);
+// });
+
+
+// //Verificar los inputs obligatorios
+// const inputs1 = document.querySelectorAll('#contactForm [required]'); //Crea un arreglo de todos los inputs de contactForm que tienen required
+
+// const validarFormulario1 = (e) => {
+// 	switch (e.target.name) {
+// 		case "name":
+// 			validarCampoName1(e.target);
+// 		break;
+// 		case "mail":
+// 			validarCampoMail1(e.target);
+// 		break;
+// 		case "phone":
+// 			validarCampoPhone1(e.target);
+// 		break;
+// 	}
+// };
+
+// const validarCampoName1 = (required) => {
+// 	if(required.value == "" || required.value == null){
+// 		Swal.fire({
+//             icon: 'error',
+//             title: 'Rellena el campo Nombre'
+//         });
+// 	}
+// };
+
+// const validarCampoMail1 = (required) => {
+// 	if(required.value == "" || required.value == null){
+// 		Swal.fire({
+//             icon: 'error',
+//             title: 'Rellena el campo E-mail'
+//         });
+// 	}
+// };
+
+// const validarCampoPhone1 = (required) => {
+// 	if(required.value == "" || required.value == null){
+// 		Swal.fire({
+//             icon: 'error',
+//             title: 'Rellena el campo Teléfono'
+//         });
+// 	}
+// };
+
+// formulario.addEventListener('submit', (e) => {
+//     e.preventDefault();
+
+//     inputs1.forEach((required) => {
+//         validarFormulario1();
+//     });
+// });
